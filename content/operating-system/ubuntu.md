@@ -2,7 +2,6 @@
 
 ## I. Terminal
 1. Check hệ điều hành
-
 ```
 duy@local:~$ lsb_release -a
 No LSB modules are available.
@@ -26,6 +25,25 @@ duy@local:~$ hostnamectl
 ```
 whoami // check tài khoản hiện tại
 passwd // Đổi mật khẩu
+```
+
+3. Disk
+```
+df -h
+rm -rf ~/.cache/*
+
+# App
+sudo apt clean
+sudo apt autoclean
+sudo apt autoremove --purge
+
+# Log
+journalctl --disk-usage
+sudo journalctl --vacuum-time=2d
+sudo journalctl --vacuum-size=100M
+
+# Docker
+docker system prune -a --volumes -f
 ```
 
 ## II. Application
